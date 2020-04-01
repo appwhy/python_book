@@ -1,5 +1,44 @@
 {
+	"title" : "python_book",
+	"author" : "appwhy",
+	"description" : "记录python知识点",
+	"language" : "zh-hans",
+
+	"structure": {
+        "readme": "introduction.md"
+    },
+
+	"links" : {
+	    "sidebar" : {
+	        "Home" : "https://github.com/appwhy"
+	    }
+	},
+
     "plugins": [
-      "-lunr", "-search", "-sharing", "search-pro"
-    ]
+      "-lunr", "-search", "search-pro", 
+      "-sharing", 
+      "code" , 
+      "github", 
+      "mermaid-gb3",
+      "splitter", 
+      "anchor-navigation-ex", 
+      "3-ba", 
+      "splitter", 
+      "simple-page-toc",
+      "tbfed-pagefooter"
+    ],
+
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/appwhy"
+        },
+        "3-ba": {
+            "token": "20b05c51dc78c5786b84d16d003150ac"
+        },
+        "tbfed-pagefooter": {
+	        "copyright": "Copyright @appwhy",
+	        "modify_label": "文件更新于：",
+	        "modify_format": "YYYY-MM-DD HH:mm:ss"
+	    }
+    }
 }
