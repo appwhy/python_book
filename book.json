@@ -1,0 +1,5 @@
+{
+    "plugins": [
+      "-lunr", "-search", "-sharing", "search-pro"
+    ]
+}
