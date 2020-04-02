@@ -17,6 +17,7 @@
     "plugins": [
       "-lunr", "-search", "search-pro", 
       "-sharing", 
+      "-highlight", "prism", "prism-themes",
       "code" , 
       "github", 
       "mermaid-gb3",
@@ -29,6 +30,11 @@
     ],
 
     "pluginsConfig": {
+        "prism": {
+            "css": [
+                "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+            ]
+        },
         "github": {
             "url": "https://github.com/appwhy"
         },

@@ -1,4 +1,4 @@
-# python库
+# python其他库
 
 [TOC]
 
@@ -18,7 +18,7 @@ Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
 Style: DIM, NORMAL, BRIGHT, RESET_ALL
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 init()接受一些* * kwargs覆盖缺省行为，
 
@@ -34,7 +34,6 @@ print(Fore.YELLOW + Back.RED + "XXXX")
 print("hello world")
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 
 
@@ -84,7 +83,7 @@ writer.writerows(data)
 csvfile.close()
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## excel相关
 
@@ -95,7 +94,6 @@ pip install xlrd
 pip install xlwt
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 ```python
 import xlwt
@@ -130,7 +128,6 @@ ws.insert_bitmap('test.bmp', 9, 1, 2, 2, scale_x=0.3, scale_y=0.3)
 wb.save('file.xls')
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 
 
@@ -167,7 +164,7 @@ row_F3 = ws.row(2)[5].value
 col_F3 = ws.col(5)[2].value
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## word相关
 
@@ -175,7 +172,6 @@ col_F3 = ws.col(5)[2].value
 pip install python-docx
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 ```python
 import docx
@@ -215,13 +211,10 @@ document.add_page_break()
 document.save('test.docx')
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 
 
-
-
-## mongodb相关
+## mongodb
 
 可视化工具：**RoboMongo**，MongoBooster。
 
@@ -229,7 +222,6 @@ document.save('test.docx')
 pip install pymongo
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 ```python
 import pymongo
@@ -259,7 +251,6 @@ user_id = user_collection.insert_one(user_info).inserted_id
 user_collection.insert_many(user_infos)
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 更新文档
 
@@ -281,32 +272,13 @@ $regex：正则表达式
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## mysql相关
+## mysql
 
 ```
 pip install SQLAlchemy
 pip install pymysql
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 ```
 from sqlalchemy import create_engine
@@ -372,32 +344,22 @@ session.execute(sql)
 session.close()
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
+
+
+## redis
 
 
 
 
 
-
-
-
-
-
-
-## redis相关
-
-
-
-
-
-## OCR相关
+## OCR
 
 ```
 pip install pyocr
 pip install Pillow
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 Pillow处理图像。
 
@@ -413,7 +375,6 @@ code = tesseract.image_to_string(im)
 print(code)
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 
 
@@ -424,7 +385,6 @@ pip install PyQt5
 pip install PyQt5-tools
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 安装PyQt5-tools后，在Lib/site-packages/pyqt5-tools中找到designer.exe，用其进行界面设计。
 
@@ -436,7 +396,6 @@ pip install PyQt5-tools
 python -m PyQt5.uic.pyuic xxx.ui -o xxx_v.py
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
 
 
@@ -451,6 +410,49 @@ python -m PyQt5.uic.pyuic xxx.ui -o xxx_v.py
        time.sleep(0.5)
    ```
 
-   ![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
-   
+
+## kazoo：zookeeper API
+
+建立连接：
+
+```python
+from kazoo.client import KazooClient
+host = 'localhost:2181'
+zk = KazooClient(host)
+zk.start()
+
+# 相关操作
+
+zk.stop()
+```
+
+
+
+获得某个节点的信息，返回一个元组：
+
+```python
+zk.get('/')
+# Out[10]:(b'', ZnodeStat(czxid=0, mzxid=4, ctime=0, mtime=1558407882652, version=1, cversion=4, aversion=1, ephemeralOwner=0, dataLength=0, numChildren=6, pzxid=288))
+```
+
+获取某个节点的所有字节点，返回一个子节点名称的列表：
+
+```python
+zk.get_children('/')
+# Out[11]: ['default', 'route', 'zookeeper', 'test', 'config']
+```
+
+获取某个节点的acl（access control list），返回一个元组：
+
+```python
+zk.get_acls('/')
+# Out[12]: ([ACL(perms=31, acl_list=['ALL'], id=Id(scheme='world', id='anyone')),  ACL(perms=31, acl_list=['ALL'], id=Id(scheme='digest', id='fsi:NLfFQJbUxUqJLJOtUIyVEQrlNeM='))],   ZnodeStat(czxid=0, mzxid=4, ctime=0, mtime=1558407882652, version=1, cversion=4, aversion=1, ephemeralOwner=0, dataLength=0, numChildren=6, pzxid=288))
+```
+
+创建一个节点，返回一个路径字符串：
+
+```python
+zk.create('/test/hg_test/test2/test3/node',b'hello world')
+```
+
