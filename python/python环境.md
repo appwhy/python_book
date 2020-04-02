@@ -186,13 +186,84 @@ ipython最初是一个python的交互式解释器，随着ipython的不断发展
 
 ## python 虚拟环境
 
+virtualenv是用来创建虚拟环境的软件工具，virtualenvwrapper软件包可以让我们更加方便的管理虚拟环境。
+
+### virtualenv
+
+```python
+pip install virtualenv
+```
+
+创建虚拟环境：
+
+```bash
+virtualenv -p C:\Python36\python.exe venv36
+```
+
+使用C:\Python36\python.exe这个python来创建一个名为venv36的python虚拟环境，如果使用参数-p的话，会使用默认的python创建虚拟环境。
+
+激活虚拟环境：
+
+```bash
+cd venv36                # 进入虚拟环境目录
+source bin/activate      # linux
+Scripts\activate.bat     # windows
+
+# 退出虚拟环境
+deactivate
+```
 
 
 
+### virtualenvwrapper
 
-
+安装：
 
 ```python
 pip install virtualenvwrapper==4.8.4  # 未知原因，不指定版本下载失败
+pip install virtualenvwrapper-win     # 提供关于virtualenvwrapper的windows接口
 ```
+
+配置系统变量：
+
+在windows下，配置系统变量WORKON_HOME，以后创建的虚拟环境文件就放在该目录下。如果没有配置该变量，则在哪个目录下创建虚拟环境，虚拟环境的文件就会放在那个目录下。
+
+![](images/python环境/sys_path.png)
+
+
+
+相关命令：
+
+```bash
+# mkvirtualenv [--python==C:\Python36\python.exe] 虚拟环境名  # --python参数可省略
+
+mkvirtualenv venv36  # 使用默认python创建一个名为venv36的虚拟环境
+
+workon               # 列出已有的虚拟环境
+lsvirtualenv         # 列出已有的虚拟环境
+
+workon venv36        # 激活venv36虚拟环境
+deactivate           # 退出当前虚拟环境
+
+rmvirtualenv venv36  # 移除venv36虚拟环境
+cdvirtualenv venv36  # 进入虚拟环境目录。
+```
+
+注：mkvirtualenv命令创建虚拟环境时，会共享原python的一些文件，即创建的虚拟环境中有些文件是快捷方式（或符号链接）。从而`cdvirtualenv`命令进入的目录可能不是按照虚拟环境文件的目录。
+
+如果不想使用快捷方式，可以执行如下命令：
+
+```bash
+mkvirtualenv --copies  env_copy
+```
+
+
+
+
+
+
+
+
+
+
 
