@@ -6,6 +6,23 @@
 
 ---
 
+## pipreqs
+
+pipreqs可以找到当前项目使用的所有python包及其版本。
+
+```bash
+# 1.在项目根目录下执行命令
+pipreqs ./  # 报错就执行下面这条
+pipreqs ./ --encoding=utf-8
+
+# 2.可以看到在根目录下生成了requirements.txt
+
+# 3.执行下面代码就会把项目用到的所有组件装上
+pip3 install -r requirements.txt
+```
+
+
+
 ## colorama：命令行输出彩色文字
 
  *colorama*是一个python专门用来在控制台、命令行输出彩色文字的模块，可以跨平台使用。

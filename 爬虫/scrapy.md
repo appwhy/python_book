@@ -876,6 +876,27 @@ dpool.close()
 
 中间件：对经过中间件的对象进行修改、丢弃、新增操作。
 
+ scrapy中间件中，处理request请求的函数，返回不同的值：
+
+* None：将请求交给后续的中间件进行处理。
+
+* Request：将请求交给调度器重新调度，并终止后续中间件的执行；
+
+* Response：终止后续中间件及下载器的执行，直接将Response交给引擎。
+
+* Exception：抛出异常。
+
+ 
+
+ scrapy中间件中，处理response响应的函数，返回不同的值：
+
+* Request：终止后续中间件的执行，将请求重新交给调度器进行调度。
+
+* Response：继续执行后续的中间件。
+
+* Exception：抛出异常。
+  
+
 ### 1. 下载中间件
 
 用途：
@@ -951,6 +972,67 @@ export https_proxy="http://user:passwd@123.123.123.123:12345"   # https代理
 1. 处理爬虫本身的异常
 
 
+
+## settings
+
+官方文档中scrapy中settings参数有四个级别：
+
+1. 命令行选项(Command line Options)（最高优先级）：`scrapy crawl somespider -s LOG_FILE=t.log`
+2. 项目设定模块(Project settings module)：custom_settings
+3. 命令默认设定模块(Default settings per-command)：项目目录下的settings文件。
+4. 全局默认设定(Default global settings) (最低优先级)
+
+### custom_settings
+
+custom_settings可以理解为spider的个性设置，通常我们在一个项目目录下会有很多个spider，但是只有一个settings.py全局配置文件，为了让不同的spider应用不同的设置，我们可以在spider代码中加入custom_settings设置。
+
+例如：
+
+spiders/somespider.py
+
+```python
+from ..custom_settings import *
+
+class Spider1(CrawlSpider):
+    name = "spider1"
+    custom_settings = custom_settings_for_spider1
+    pass
+```
+
+custom_settings.py
+
+```python
+custom_settings_for_spider1 = {
+    'LOG_FILE': 'spider1.log',
+    'CONCURRENT_REQUESTS': 100,
+    'DOWNLOADER_MIDDLEWARES': {
+        'spider.middleware_for_spider1.Middleware': 667,
+    },
+    'ITEM_PIPELINES': {
+        'spider.mysql_pipeline_for_spider1.Pipeline': 400,
+    },
+}
+```
+
+在spider里有两个蜘蛛spider1、spider2里，我们引入了来自custom_settings的配置变量custom_settings_for_spider1、custom_settings_for_spider2，通过这些变量，我们分别对两个爬虫的log文件、并发数、应用的中间件和管道文件进行了设置。
+
+custom_settings的优先级在命令行以下，比settings.py要高。  
+
+### settings的使用技巧
+
+在这简单说说我在工作中对于不同类型settings的使用技巧吧。
+
+1.首先是settings.py文件，在一个scrapy项目中，一些通用的设置，比如请求头、代理入口、数据库连接等等，都可以统一写在settings.py中。
+
+2.其次是custom_settings，在scrapy项目中单独建立一个custom_settings.py文件，依据不同spider所需要的设置，比如某站点A可能反爬严，我并发设置短点，站点B没反爬，我并发设置高点；又或者A用了中间件MA，B用了中间件MB等，我在custom_settings.py文件中分别给予设置。
+
+3.最后是命令行。例如我要每个进程的日志分别查看，或者追踪每个进程的爬取速度等，这用命令行参数就比较合适。例如：
+
+```python
+from scrapy import cmdline
+
+cmdline.execute('scrapy crawl spider1 -s LOG_FILE=p1.log -s PROCESS_NAME=1'.split())
+```
 
 ## 分布式爬取
 
@@ -1094,5 +1176,16 @@ curl http://[host]:6800/cancel.json -d project=[project_name] -d spider=[spider_
 
 
 
+## telnet
 
+telnet 监测爬虫运行，并且可以运行python代码
+
+连接telnet：`telnet localhost 6023(or 6024)`
+
+常用命令：
+
+- `est ( )` :  查看爬虫引擎各组件的运行状态
+- `p(stats.get_stats())`  ：查看爬虫已经运行的各项指标
+
+:coffee: :zapple
 
