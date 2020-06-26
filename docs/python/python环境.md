@@ -86,6 +86,10 @@ jupyter kernelspec list
 Available kernels:
   python3    C:\ProgramData\Anaconda3\lib\site-packages\ipykernel\resources
   python2    C:\ProgramData\jupyter\kernels\python2
+  
+
+# 列出jupyter的设置、数据目录
+jupyter --paths 
 ```
 
 
@@ -97,6 +101,30 @@ python -m ipykernel install --name myenv --display-name 'py27"
 ```
 
   --name 是给jupyter 启动Kernel 使用（是`jupyter kernelspec list`显示在前面的name，如果指定的name已存在则会覆盖。--display-name 是为Jupyter notebook 菜单显示。
+
+
+
+#### jupyter扩展
+
+安装nbextensions：
+
+```bash
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+
+# 安装之后还需要启动扩展
+jupyter nbextensions_configurator enable --user
+```
+
+--user表示将扩展安装到当前用户的配置文件夹下。
+
+然后重启jupyter，在弹出的主页面里，能看到增加了一个Nbextensions标签页，在这个页面里，可以勾选相关扩展从而启动扩展。
+
+常用扩展：
+
+* Hinterland：每敲完一个键，就出现下拉菜单，可以直接选中你需要的词汇。
+* Snippets：在工具栏里加了一个下拉菜单，可以非常方便的插入代码段（预先编写好的，类似模板）。
+* Autopep8：使python代码符合pep8规范，需要先安装依赖`pip install autopep8`。
 
 #### 搭建 jupyter notebook 服务
 
