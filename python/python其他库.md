@@ -6,6 +6,96 @@
 
 ---
 
+## argparse
+
+```python
+import argparse
+
+if __name__=='__main__':
+	parser = argparse.ArgumentParser(description="Demo of argparse")  # 参数解析器
+    
+    parser.add_argument('cmd', type=str, nargs='?', help='help info')
+
+    parser.add_argument('-n', '--name', default=' Li ')
+    parser.add_argument('-y', '--year', default='20')
+    
+    parser.add_argument('--debug', action="store_true")  # 不需要跟值，使用该选项就会使debug属性为True。如果不加该参数，debug值默认False。'store_false'则相反
+    
+    args = parser.parse_args()
+    print(args)
+    name = args.name
+    year = args.year
+    
+    print('Hello {}  {}'.format(name, year))
+```
+
+`nargs` 参数来限定输入的位置参数的个数，默认为1。当然nargs参数也可用于普通带标签的参数。
+
+nargs 字符串：
+
+* `'*'`：之后所有的输入都将作为该位置参数的值
+* `‘+’`：表示读取至少1个该位置参数。
+* `'?'`：表示该位置参数要么没有，要么就只要一个。
+
+## jinja2
+
+Jinja2是Python下一个被广泛应用的模版引擎，他的设计思想来源于Django的模板引擎，并扩展了其语法和一系列强大的功能。其中最显著的一个是增加了沙箱执行功能和可选的自动转义功能，这对大多应用的安全性来说是非常重要的。
+
+Flask使用jinja2作为框架的模板系统。使用django等其他Python web框架也可以方便的集成jinja2模板系统
+
+如果将减号（`-`）添加到块的开头或结尾（例如For标签），注释或变量表达式，则将删除该块之前或之后的空格。
+
+```python
+from jinja2 import Template
+template = Template('Hello {{ name }}!')
+template.render(name='John Doe')
+# Out: 'Hello John Doe!'
+```
+
+jinja2可以操作列表（元组 ）、字典、对象。
+
+列表：
+
+```
+li.0
+li[0]
+
+ {% for i in range(10) %}
+        {{ i }}
+ ｛% endfor %}
+```
+
+
+
+## codecs
+
+```
+codecs : Python Codec Registry, API and helpers. coder, decoder
+```
+
+python的内部是使用unicode来处理的，但是unicode的使用需要考虑的是它的编码格式有两种，一是UCS-2，它一共有65536个码 位，另一种是UCS-4，它有2147483648g个码位。
+
+可以通过以下代码查看：
+
+```python
+import sys
+print(sys.maxunicode)
+```
+
+
+
+```python
+import codecs
+fw = codecs.open('test1.txt','a','utf-8')
+fw.write(line2)
+```
+
+```python
+open(filename, mode='r', encoding=None, errors='strict', buffering=1)
+```
+
+
+
 ## pipreqs
 
 pipreqs可以找到当前项目使用的所有python包及其版本。
@@ -291,13 +381,13 @@ $regex：正则表达式
 
 ## mysql
 
-```
+```bash
 pip install SQLAlchemy
 pip install pymysql
 ```
 
 
-```
+```python
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -332,9 +422,7 @@ myclass.create(bind=engine)
 
 
 
-engine = create_engine(
-    "mysql+pymysql://root:1990@localhost:3306/test?charset=utf8",
-    echo=True)
+engine = create_engine("mysql+pymysql://root:1990@localhost:3306/test?charset=utf8",echo=True)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
@@ -360,6 +448,12 @@ session.execute(sql)
 
 session.close()
 ```
+
+
+
+
+
+
 
 
 

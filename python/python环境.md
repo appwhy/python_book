@@ -130,7 +130,7 @@ jupyter nbextensions_configurator enable --user
 
 首先在linux上安装好python及相应的包，然后进行下面的操作。
 
-编辑配置文件：/root/.jupyter/jupyter_notebook_config：（当前用户关于jupyter的配置文件）
+编辑配置文件：`~/.jupyter/jupyter_notebook_config.py`：（当前用户关于jupyter的配置文件）
 
 如果没有，就先生成：
 
@@ -140,10 +140,13 @@ jupyter notebook --generate-config
 
 修改配置：
 
-```
+```python
 c.NotebookApp.allow_remote_access = True
 c.NotebookApp.ip = '*'
 c.NotebookApp.password = 'sha1:xxx:xxx'
+
+c.NotebookApp.open_browser = False
+c.NotebookApp.port =8888 #可自行指定一个端口, 访问时使用该端口
 ```
 
 自己设置一个密码：
@@ -155,7 +158,7 @@ from notebook.auth import passwd
 passwd()
 ```
 
-将生成的'sha1:xxx:xxx'写入到配置文件中的 c.NotebookApp.password 项中。
+将生成的'sha1:xxx:xxx'写入到配置文件中的 `c.NotebookApp.password` 变量中。
 
 后台启动jupyter botebook，并将日志写入指定文件：
 
@@ -227,9 +230,17 @@ jupyter-lab             # 运行
 
 ## python 虚拟环境
 
-virtualenv是用来创建虚拟环境的软件工具，virtualenvwrapper软件包可以让我们更加方便的管理虚拟环境。
+创建虚拟环境：
+
+```bash
+python3.6 -m venv myvenv
+```
+
+创建关于python3.6，名为myvenv虚拟环境
 
 ### virtualenv
+
+virtualenv是用来创建虚拟环境的软件工具，virtualenvwrapper软件包可以让我们更加方便的管理虚拟环境。
 
 ```python
 pip install virtualenv
