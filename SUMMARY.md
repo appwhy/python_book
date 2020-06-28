@@ -16,6 +16,7 @@
   * [python常用库](python/python常用库.md)
   * [python环境](python/python环境.md)
   * [基础知识](python/基础知识.md)
+  * [小技巧](python/小技巧.md)
   * [常用知识点](python/常用知识点.md)
   * [常见问题](python/常见问题.md)
 

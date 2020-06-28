@@ -81,7 +81,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="常用知识点.html" />
+    <link rel="next" href="小技巧.html" />
     
     
     <link rel="prev" href="python环境.html" />
@@ -260,7 +260,20 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.5" data-path="常用知识点.html">
+        <li class="chapter " data-level="3.1.5" data-path="小技巧.html">
+            
+                <a href="小技巧.html">
+            
+                    
+                    小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="常用知识点.html">
             
                 <a href="常用知识点.html">
             
@@ -273,7 +286,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.6" data-path="常见问题.html">
+        <li class="chapter " data-level="3.1.7" data-path="常见问题.html">
             
                 <a href="常见问题.html">
             
@@ -616,26 +629,46 @@ answers <span class="token operator">=</span> <span class="token punctuation">[<
 <p>for &#x2026; else &#x8868;&#x793A;&#x8FD9;&#x6837;&#x7684;&#x610F;&#x601D;&#xFF0C;for &#x4E2D;&#x7684;&#x8BED;&#x53E5;&#x548C;&#x666E;&#x901A;&#x7684;&#x6CA1;&#x6709;&#x533A;&#x522B;&#xFF0C;else &#x4E2D;&#x7684;&#x8BED;&#x53E5;&#x4F1A;&#x5728;&#x5FAA;&#x73AF;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x5B8C;&#xFF08;&#x5373; for &#x4E0D;&#x662F;&#x901A;&#x8FC7; break &#x8DF3;&#x51FA;&#x800C;&#x4E2D;&#x65AD;&#x7684;&#xFF09;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6267;&#x884C;&#xFF0C;while &#x2026; else &#x4E5F;&#x662F;&#x4E00;&#x6837;&#x3002;</p>
 <h2 id="&#x5185;&#x7F6E;&#x51FD;&#x6570;"><a name="&#x5185;&#x7F6E;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. &#x5185;&#x7F6E;&#x51FD;&#x6570;</h2>
 <p>dir()&#x8FD4;&#x56DE;&#x7684;&#x5217;&#x8868;&#x5BB9;&#x7EB3;&#x4E86;&#x5728;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x6A21;&#x5757;&#xFF0C;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x663E;&#x793A;&#x6240;&#x6709;&#x5185;&#x7F6E;&#x51FD;&#x6570;/&#x53D8;&#x91CF;/&#x7C7B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> builtins
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">(</span>builtins<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6839;&#x636E;&#x8C03;&#x7528;&#x5730;&#x65B9;&#x7684;&#x4E0D;&#x540C;&#xFF0C;globals() &#x548C; locals() &#x51FD;&#x6570;&#x53EF;&#x88AB;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x5168;&#x5C40;&#x548C;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x91CC;&#x7684;&#x540D;&#x5B57;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8C03;&#x7528; locals()&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6240;&#x6709;&#x80FD;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x8BBF;&#x95EE;&#x7684;&#x547D;&#x540D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8C03;&#x7528; globals()&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6240;&#x6709;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x80FD;&#x8BBF;&#x95EE;&#x7684;&#x5168;&#x5C40;&#x540D;&#x5B57;&#x3002;</p>
 <h2 id="python&#x6A21;&#x5757;&#x4E0E;&#x5305;"><a name="python&#x6A21;&#x5757;&#x4E0E;&#x5305;" class="anchor-navigation-ex-anchor" href="#python&#x6A21;&#x5757;&#x4E0E;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. python&#x6A21;&#x5757;&#x4E0E;&#x5305;</h2>
-<p>Python &#x6A21;&#x5757;(Module)&#xFF0C;&#x662F;&#x4E00;&#x4E2A; Python &#x6587;&#x4EF6;&#xFF0C;&#x4EE5; .py &#x7ED3;&#x5C3E;&#xFF0C;&#x5305;&#x542B;&#x4E86; Python &#x5BF9;&#x8C61;&#x5B9A;&#x4E49;&#x548C;Python&#x8BED;&#x53E5;&#x3002;&#x6A21;&#x5757;&#x80FD;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x7C7B;&#x548C;&#x53D8;&#x91CF;&#xFF0C;&#x6A21;&#x5757;&#x91CC;&#x4E5F;&#x80FD;&#x5305;&#x542B;&#x53EF;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>Python &#x6A21;&#x5757;(Module)&#xFF0C;&#x662F;&#x4E00;&#x4E2A; Python &#x6587;&#x4EF6;&#xFF0C;&#x4EE5; .py &#x7ED3;&#x5C3E;&#x3002;&#x6A21;&#x5757;&#x80FD;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x7C7B;&#x548C;&#x53D8;&#x91CF;&#xFF0C;&#x6A21;&#x5757;&#x91CC;&#x4E5F;&#x80FD;&#x5305;&#x542B;&#x53EF;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
 <p>&#x5305;&#x662F;&#x4E00;&#x4E2A;&#x5206;&#x5C42;&#x6B21;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7531;&#x6A21;&#x5757;&#x53CA;&#x5B50;&#x5305;&#xFF0C;&#x548C;&#x5B50;&#x5305;&#x4E0B;&#x7684;&#x5B50;&#x5305;&#x7B49;&#x7EC4;&#x6210;&#x7684; Python &#x7684;&#x5E94;&#x7528;&#x73AF;&#x5883;&#x3002;</p>
-<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x5305;&#x5C31;&#x662F;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4F46;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5FC5;&#x987B;&#x5B58;&#x5728; <strong>init</strong>.py &#x6587;&#x4EF6;, &#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x3002;<strong><strong>init</strong>.py</strong> &#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x662F;&#x4E00;&#x4E2A;&#x5305;.</p>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x5305;&#x5C31;&#x662F;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4F46;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5FC5;&#x987B;&#x5B58;&#x5728; <code>__init__.py</code> &#x6587;&#x4EF6;(&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;)&#x3002;<code>__init__.py</code> &#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x3002;</p>
 <p>&#x5F53;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x88AB;&#x5BFC;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#xFF0C;&#x6A21;&#x5757;&#x9876;&#x5C42;&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#x53EA;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x6A21;&#x5757;&#x91CC;&#x9876;&#x5C42;&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; reload() &#x51FD;&#x6570;</p>
 <pre class="language-"><code class="lang-python"><span class="token keyword">import</span> importlib
 importlib<span class="token punctuation">.</span><span class="token builtin">reload</span><span class="token punctuation">(</span>module_name<span class="token punctuation">)</span>
 </code></pre>
 <p>&#x5F53;&#x89E3;&#x91CA;&#x5668;&#x9047;&#x5230; import &#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x6A21;&#x5757;&#x5728;&#x5F53;&#x524D;&#x7684;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x4E2D;&#xFF0C;&#x5C31;&#x4F1A;&#x88AB;&#x5BFC;&#x5165;&#x3002;</p>
 <p>&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x662F;&#x4E00;&#x4E2A;&#x89E3;&#x91CA;&#x5668;&#x4F1A;&#x5148;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x7684;&#x6240;&#x6709;&#x76EE;&#x5F55;&#x7684;&#x5217;&#x8868;&#x3002;</p>
-<p>&#x5F53;&#x4F60;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;Python &#x89E3;&#x6790;&#x5668;&#x5BF9;&#x6A21;&#x5757;&#x4F4D;&#x7F6E;&#x7684;&#x641C;&#x7D22;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
+<p>&#x5F53;&#x4F60;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;<strong>&#x6A21;&#x5757;</strong>&#xFF0C;Python &#x89E3;&#x6790;&#x5668;&#x5BF9;&#x6A21;&#x5757;&#x4F4D;&#x7F6E;&#x7684;&#x641C;&#x7D22;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
 <ol>
+<li><strong>&#x5177;&#x6709;&#x8BE5;&#x540D;&#x79F0;&#x7684;&#x5185;&#x7F6E;&#x6A21;&#x5757;</strong></li>
 <li>&#x5F53;&#x524D;&#x76EE;&#x5F55;</li>
 <li>&#x5982;&#x679C;&#x4E0D;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;Python &#x5219;&#x641C;&#x7D22;&#x5728; shell &#x53D8;&#x91CF; PYTHONPATH &#x4E0B;&#x7684;&#x6BCF;&#x4E2A;&#x76EE;&#x5F55;&#x3002;</li>
 <li>&#x5982;&#x679C;&#x90FD;&#x627E;&#x4E0D;&#x5230;&#xFF0C;Python&#x4F1A;&#x5BDF;&#x770B;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x3002;UNIX&#x4E0B;&#xFF0C;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x4E00;&#x822C;&#x4E3A;/usr/local/lib/python/&#x3002;</li>
 </ol>
-<p>&#x6A21;&#x5757;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x5B58;&#x50A8;&#x5728; system &#x6A21;&#x5757;&#x7684; sys.path &#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x53D8;&#x91CF;&#x91CC;&#x5305;&#x542B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;PYTHONPATH&#x548C;&#x7531;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x51B3;&#x5B9A;&#x7684;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;&#x3002;</p>
-<p>&#x6839;&#x636E;&#x8C03;&#x7528;&#x5730;&#x65B9;&#x7684;&#x4E0D;&#x540C;&#xFF0C;globals() &#x548C; locals() &#x51FD;&#x6570;&#x53EF;&#x88AB;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x5168;&#x5C40;&#x548C;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x91CC;&#x7684;&#x540D;&#x5B57;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8C03;&#x7528; locals()&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6240;&#x6709;&#x80FD;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x8BBF;&#x95EE;&#x7684;&#x547D;&#x540D;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8C03;&#x7528; globals()&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6240;&#x6709;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x80FD;&#x8BBF;&#x95EE;&#x7684;&#x5168;&#x5C40;&#x540D;&#x5B57;&#x3002;</p>
+<p>&#x6A21;&#x5757;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x5B58;&#x50A8;&#x5728; system &#x6A21;&#x5757;&#x7684; <code>sys.path</code> &#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x53D8;&#x91CF;&#x91CC;&#x5305;&#x542B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;PYTHONPATH&#x548C;&#x7531;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x51B3;&#x5B9A;&#x7684;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x5F53;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;<strong>&#x5305;</strong>&#x65F6;&#xFF0C;&#x641C;&#x7D22;&#x987A;&#x5E8F; &#x548C;&#x5BFC;&#x5165;&#x6A21;&#x5757;&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x6B65;&#x9AA4;1&#xFF08;&#x6700;&#x5148;&#x641C;&#x7D22;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">html/
+    parser.py
+
+html/
+    __init__.py
+    parser.py
+main.py
+
+<span class="token comment"># main.py</span>
+from html <span class="token function">import</span> parser
+<span class="token comment"># other code</span>
+</code></pre>
+<p>&#x7B2C;1&#x4E2A;&#x662F;html&#x662F;&#x6A21;&#x5757;&#xFF08;&#x6CA1;&#x6709;&#x5B9A;&#x4E49; <code>__init__.py</code>&#xFF09;&#xFF0C;&#x7B2C;2&#x4E2A;&#x662F;&#x5305;&#x3002;&#x5F53;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x65F6;&#xFF0C;main.py&#x4E2D;&#x5BFC;&#x5165;parser&#x4F1A;&#x5148;&#x5230;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#x4E2D;&#x5BFB;&#x627E;&#xFF0C;&#x800C;&#x6B63;&#x597D;&#x6709;&#x4E2A;&#x540C;&#x540D;&#x7684;&#x5185;&#x7F6E;&#x6A21;&#x5757;html&#xFF0C;&#x6700;&#x7EC8;&#x5BFC;&#x81F4;&#x5BFC;&#x5165;&#x7684;&#x662F;&#x5185;&#x7F6E;&#x6A21;&#x5757;html&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x7684;&#x3002; &#x5982;&#x679C;&#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x5219;&#x5BFC;&#x5165;&#x7684;&#x662F;&#x81EA;&#x5DF1;&#x5199;&#x7684;html.parser&#x3002;</p>
 <h2 id="python&#x5F02;&#x5E38;"><a name="python&#x5F02;&#x5E38;" class="anchor-navigation-ex-anchor" href="#python&#x5F02;&#x5E38;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. python&#x5F02;&#x5E38;</h2>
 <table>
 <thead>
@@ -683,7 +716,7 @@ importlib<span class="token punctuation">.</span><span class="token builtin">rel
 </ul>
 <p>Python &#x4F7F;&#x7528;&#x4E86;<strong>&#x5F15;&#x7528;&#x8BA1;&#x6570;</strong>&#x8FD9;&#x4E00;&#x7B80;&#x5355;&#x6280;&#x672F;&#x6765;&#x8DDF;&#x8E2A;&#x548C;&#x56DE;&#x6536;&#x5783;&#x573E;&#x3002;&#x5728; Python &#x5185;&#x90E8;&#x8BB0;&#x5F55;&#x7740;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x5404;&#x6709;&#x591A;&#x5C11;&#x5F15;&#x7528;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">Copyright @appwhy all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2020-04-02 18:40:40
+2020-06-28 20:20:18
 </span></footer>
                                 
                                 </section>
@@ -716,7 +749,7 @@ importlib<span class="token punctuation">.</span><span class="token builtin">rel
                 </a>
                 
                 
-                <a href="常用知识点.html" class="navigation navigation-next " aria-label="Next page: 常用知识点">
+                <a href="小技巧.html" class="navigation navigation-next " aria-label="Next page: 小技巧">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -727,7 +760,7 @@ importlib<span class="token punctuation">.</span><span class="token builtin">rel
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基础知识","level":"3.1.4","depth":2,"next":{"title":"常用知识点","level":"3.1.5","depth":2,"path":"python/常用知识点.md","ref":"python/常用知识点.md","articles":[]},"previous":{"title":"python环境","level":"3.1.3","depth":2,"path":"python/python环境.md","ref":"python/python环境.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-highlight","prism","prism-themes","code","github","mermaid-gb3","splitter","anchor-navigation-ex","3-ba","splitter","simple-page-toc","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @appwhy","modify_label":"文件更新于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"github":{"url":"https://github.com/appwhy"},"simple-page-toc":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"prism-themes":{},"3-ba":{"configuration":"auto","token":"20b05c51dc78c5786b84d16d003150ac"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"appwhy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_book","language":"zh-hans","links":{"sidebar":{"Home":"https://github.com/appwhy"}},"gitbook":"*","description":"记录python知识点"},"file":{"path":"python/基础知识.md","mtime":"2020-04-02T10:40:40.841Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-26T13:42:43.065Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基础知识","level":"3.1.4","depth":2,"next":{"title":"小技巧","level":"3.1.5","depth":2,"path":"python/小技巧.md","ref":"python/小技巧.md","articles":[]},"previous":{"title":"python环境","level":"3.1.3","depth":2,"path":"python/python环境.md","ref":"python/python环境.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-highlight","prism","prism-themes","code","github","mermaid-gb3","splitter","anchor-navigation-ex","3-ba","splitter","simple-page-toc","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @appwhy","modify_label":"文件更新于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"github":{"url":"https://github.com/appwhy"},"simple-page-toc":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"prism-themes":{},"3-ba":{"configuration":"auto","token":"20b05c51dc78c5786b84d16d003150ac"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"appwhy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_book","language":"zh-hans","links":{"sidebar":{"Home":"https://github.com/appwhy"}},"gitbook":"*","description":"记录python知识点"},"file":{"path":"python/基础知识.md","mtime":"2020-06-28T12:20:18.551Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-28T13:31:53.128Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

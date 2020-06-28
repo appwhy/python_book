@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>python · python_book</title>
+        <title>小技巧 · python_book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="python其他库.html" />
+    <link rel="next" href="常用知识点.html" />
     
     
-    <link rel="prev" href="../nlp/NLP 相关算法.html" />
+    <link rel="prev" href="基础知识.html" />
     
 
     </head>
@@ -194,7 +194,7 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="python.html">
+        <li class="chapter " data-level="3.1" data-path="python.html">
             
                 <a href="python.html">
             
@@ -260,7 +260,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.5" data-path="小技巧.html">
+        <li class="chapter active" data-level="3.1.5" data-path="小技巧.html">
             
                 <a href="小技巧.html">
             
@@ -451,7 +451,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >python</a>
+        <a href=".." >小技巧</a>
     </h1>
 </div>
 
@@ -466,14 +466,50 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python"><b>1. </b>python</a></li></ul></div><a href="#python" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="python"><a name="python" class="anchor-navigation-ex-anchor" href="#python"><i class="fa fa-link" aria-hidden="true"></i></a>1. python</h1>
-<p>[TOC]</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5C0F;&#x6280;&#x5DE7;"><b>1. </b>&#x5C0F;&#x6280;&#x5DE7;</a></li><ul><li><span class="title-icon "></span><a href="#format&#x7B80;&#x7565;&#x5199;&#x6CD5;"><b>1.1. </b>format&#x7B80;&#x7565;&#x5199;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#slots"><b>1.2. </b>__slots__</a></li><li><span class="title-icon "></span><a href="#&#x901A;&#x8FC7;url&#x6253;&#x5F00;&#x56FE;&#x7247;"><b>1.3. </b>&#x901A;&#x8FC7;URL&#x6253;&#x5F00;&#x56FE;&#x7247;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;"><b>1.4. </b>&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;</a></li></ul></ul></div><a href="#&#x5C0F;&#x6280;&#x5DE7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5C0F;&#x6280;&#x5DE7;"><a name="&#x5C0F;&#x6280;&#x5DE7;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5C0F;&#x6280;&#x5DE7;</h1>
+<p>[toc]</p>
 <!-- toc -->
+<ul>
+<li><a href="#format%E7%AE%80%E7%95%A5%E5%86%99%E6%B3%95">format&#x7B80;&#x7565;&#x5199;&#x6CD5;</a></li>
+<li><a href="#__slots__"><code>__slots__</code></a></li>
+<li><a href="#%E9%80%9A%E8%BF%87url%E6%89%93%E5%BC%80%E5%9B%BE%E7%89%87">&#x901A;&#x8FC7;URL&#x6253;&#x5F00;&#x56FE;&#x7247;</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81">&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;</a></li>
+</ul>
 <!-- tocstop -->
 <hr>
-<p>&#x8BB0;&#x5F55;python&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x3002; </p>
+<h2 id="format&#x7B80;&#x7565;&#x5199;&#x6CD5;"><a name="format&#x7B80;&#x7565;&#x5199;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#format&#x7B80;&#x7565;&#x5199;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. format&#x7B80;&#x7565;&#x5199;&#x6CD5;</h2>
+<pre class="language-"><code class="lang-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;a+b={}&apos;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;a+b=</span><span class="token interpolation"><span class="token punctuation">{</span>a<span class="token operator">+</span>b<span class="token punctuation">}</span></span><span class="token string">&apos;</span></span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<h2 id="slots"><a name="slots" class="anchor-navigation-ex-anchor" href="#slots"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. __slots__</h2>
+<p>python&#x662F;&#x52A8;&#x6001;&#x8BED;&#x8A00;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x60F3;&#x9650;&#x5236;&#x5B9E;&#x4F8B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>__slots__</code>&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    __slots__ <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Person&#x7C7B;&#x53EA;&#x6709;name/age2&#x4E2A;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x8D4B;&#x503C;&#x3002;&#x5982;&#x679C;&#x60F3;&#x589E;&#x52A0;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#xFF0C;&#x4F1A;&#x51FA;&#x9519;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;<code>__slots__</code> &#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x4EC5;&#x5BF9;&#x5F53;&#x524D;&#x7C7B;&#x5B9E;&#x4F8B;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x5BF9;&#x7EE7;&#x627F;&#x7684;&#x5B50;&#x7C7B;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;</p>
+<hr>
+<h2 id="&#x901A;&#x8FC7;url&#x6253;&#x5F00;&#x56FE;&#x7247;"><a name="&#x901A;&#x8FC7;url&#x6253;&#x5F00;&#x56FE;&#x7247;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x8FC7;url&#x6253;&#x5F00;&#x56FE;&#x7247;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x901A;&#x8FC7;URL&#x6253;&#x5F00;&#x56FE;&#x7247;</h2>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> requests <span class="token keyword">as</span> req
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">from</span> io <span class="token keyword">import</span> BytesIO
+
+img_src <span class="token operator">=</span> <span class="token string">&apos;http://wx2.sinaimg.cn/mw690/ac38503ely1fesz8m0ov6j20qo140dix.jpg&apos;</span>
+response <span class="token operator">=</span> req<span class="token punctuation">.</span>get<span class="token punctuation">(</span>img_src<span class="token punctuation">)</span>
+image <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>BytesIO<span class="token punctuation">(</span>response<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">)</span>
+image<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;</h2>
+<p>&#x56E0;&#x4E3A;decode&#x7684;&#x51FD;&#x6570;&#x539F;&#x578B;&#x662F; <code>decode([encoding], [errors=&apos;strict&apos;])</code> &#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x662F;strict&#xFF0C;&#x4EE3;&#x8868;&#x9047;&#x5230;&#x975E;&#x6CD5;&#x5B57;&#x7B26;&#x65F6;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x5176;&#x4ED6;&#x9009;&#x9879;&#xFF1A;</p>
+<ul>
+<li><code>ignore</code>&#xFF1A;&#x5FFD;&#x7565;&#x975E;&#x6CD5;&#x5B57;&#x7B26;</li>
+<li><code>replace</code>&#xFF1A;&#x4F1A;&#x7528;?&#x53D6;&#x4EE3;&#x975E;&#x6CD5;&#x5B57;&#x7B26;</li>
+<li><code>xmlcharrefreplace</code>&#xFF1A;&#x4F7F;&#x7528;XML&#x7684;&#x5B57;&#x7B26;&#x5F15;&#x7528;</li>
+</ul>
 <footer class="page-footer"><span class="copyright">Copyright @appwhy all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2020-06-17 09:37:25
+2020-06-28 21:02:41
 </span></footer>
                                 
                                 </section>
@@ -501,12 +537,12 @@
 
             
                 
-                <a href="../nlp/NLP 相关算法.html" class="navigation navigation-prev " aria-label="Previous page: NLP 相关算法">
+                <a href="基础知识.html" class="navigation navigation-prev " aria-label="Previous page: 基础知识">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="python其他库.html" class="navigation navigation-next " aria-label="Next page: python其他库">
+                <a href="常用知识点.html" class="navigation navigation-next " aria-label="Next page: 常用知识点">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -517,7 +553,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"python","level":"3.1","depth":1,"next":{"title":"python其他库","level":"3.1.1","depth":2,"path":"python/python其他库.md","ref":"python/python其他库.md","articles":[]},"previous":{"title":"NLP 相关算法","level":"2.1.1","depth":2,"path":"nlp/NLP 相关算法.md","ref":"nlp/NLP 相关算法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-highlight","prism","prism-themes","code","github","mermaid-gb3","splitter","anchor-navigation-ex","3-ba","splitter","simple-page-toc","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @appwhy","modify_label":"文件更新于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"github":{"url":"https://github.com/appwhy"},"simple-page-toc":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"prism-themes":{},"3-ba":{"configuration":"auto","token":"20b05c51dc78c5786b84d16d003150ac"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"appwhy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_book","language":"zh-hans","links":{"sidebar":{"Home":"https://github.com/appwhy"}},"gitbook":"*","description":"记录python知识点"},"file":{"path":"python/python.md","mtime":"2020-06-17T01:37:25.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-28T13:31:53.128Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小技巧","level":"3.1.5","depth":2,"next":{"title":"常用知识点","level":"3.1.6","depth":2,"path":"python/常用知识点.md","ref":"python/常用知识点.md","articles":[]},"previous":{"title":"基础知识","level":"3.1.4","depth":2,"path":"python/基础知识.md","ref":"python/基础知识.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-highlight","prism","prism-themes","code","github","mermaid-gb3","splitter","anchor-navigation-ex","3-ba","splitter","simple-page-toc","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @appwhy","modify_label":"文件更新于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"github":{"url":"https://github.com/appwhy"},"simple-page-toc":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"prism-themes":{},"3-ba":{"configuration":"auto","token":"20b05c51dc78c5786b84d16d003150ac"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"appwhy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_book","language":"zh-hans","links":{"sidebar":{"Home":"https://github.com/appwhy"}},"gitbook":"*","description":"记录python知识点"},"file":{"path":"python/小技巧.md","mtime":"2020-06-28T13:02:41.062Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-28T13:31:53.128Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
