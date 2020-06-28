@@ -212,6 +212,19 @@ ipython最初是一个python的交互式解释器，随着ipython的不断发展
 
 而IPython本身专注于交互式Python，其中一部分是为Jupyter提供Python内核。
 
+## jupyterlab
+
+jupyterlab是jupyter notebook的加强版。
+
+```bash
+pip install jupyterlab  # 安装
+jupyter-lab             # 运行
+```
+
+
+
+
+
 ## python 虚拟环境
 
 virtualenv是用来创建虚拟环境的软件工具，virtualenvwrapper软件包可以让我们更加方便的管理虚拟环境。
@@ -286,6 +299,16 @@ mkvirtualenv --copies  env_copy
 ```
 
 
+
+## conda
+
+创建虚拟环境：
+
+```bash
+conda create -n learn_python36 python=3.6
+
+conda env list
+```
 
 
 
