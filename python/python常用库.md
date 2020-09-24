@@ -343,6 +343,23 @@ attr.ib(default=NOTHING, validator=None, repr=True, cmp=True, hash=None, init=Tr
 
 
 
+## SQLAlchemy
+
+SQLAlchemy 中的`Group By`用法：
+
+```python
+from sqlalchemy import func
+
+# SELECT school, COUNT(*) AS c FROM persons WHERE gender="male" GROUP BY age;
+results = sessin.query( Person.school, func.count('*').label('c') ).filter(Person.gender=='male').group_by( Person.age )
+
+# SELECT school, COUNT(*) AS c FROM persons WHERE gender="male" GROUP BY age HAVING c >1
+nums = func.count('*').label('c')
+results = sessin.query( Person.school, nums ).filter(Person.gender=='male').group_by(Person.age).having(nums > 10)
+```
+
+
+
 
 
 
