@@ -122,6 +122,56 @@ this_month_start = datetime.datetime(now.year, now.month, 1)
 this_month_end = datetime.datetime(now.year, now.month, calendar.monthrange(now.year, now.month)[1])
 ```
 
+## decimal
+
+decimal模块能够精确保留小数。
+
+主要函数：
+
+```python
+# 去除末尾多余0.有时会将其转换成科学计数法，慎用。 可以再用'{:f}'。format(v)将其转换回来
+Decimal('1.120000').normalize()
+
+```
+
+
+
+### 小数保留
+
+环境：python3
+
+python自带函数`round`
+
+python3官方文档：`values are rounded to the closest multiple of 10 to the power minus *ndigits*; if two multiples are equally close, rounding is done toward the even choice. `
+
+如果距离两边一样远，会保留到偶数这一边。
+
+浮点数存储的不是确定值，请用decimal。
+
+
+
+round类型
+
+- `decimal.ROUND_CEILING`: Round towards Infinity.
+
+* `decimal.ROUND_DOWN`: Round towards zero.
+* `decimal.ROUND_FLOOR`: Round towards -Infinity.
+* `decimal.ROUND_HALF_DOWN`: Round to nearest with ties going towards zero.
+* `decimal.ROUND_HALF_EVEN`: Round to nearest with ties going to nearest even integer.
+* `decimal.ROUND_HALF_UP`: Round to nearest with ties going away from zero.
+* `decimal.ROUND_UP`: Round away from zero.
+* `decimal.ROUND_05UP`: Round away from zero if last digit after rounding towards zero would have been 0 or 5; otherwise round towards zero.
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## logging
@@ -272,6 +322,41 @@ development:
 ```
 
 
+
+## attr
+
+attr：用于快速实现类的库。attr可看作是一个类装饰器但又不仅仅是简单的装饰器，他使得我们编写类变得更加简单轻松。
+
+```python
+import attr
+
+@attr.s
+class A(object):
+    a = attr.ib()
+    b = attr.ib()
+    
+# 核心API
+attr.s(these=None, repr_ns=None, repr=True, cmp=True, hash=None, init=True, slots=False, frozen=False, str=False)
+
+attr.ib(default=NOTHING, validator=None, repr=True, cmp=True, hash=None, init=True, convert=None, metadata=None, type=None, converter=None)
+```
+
+
+
+## SQLAlchemy
+
+SQLAlchemy 中的`Group By`用法：
+
+```python
+from sqlalchemy import func
+
+# SELECT school, COUNT(*) AS c FROM persons WHERE gender="male" GROUP BY age;
+results = sessin.query( Person.school, func.count('*').label('c') ).filter(Person.gender=='male').group_by( Person.age )
+
+# SELECT school, COUNT(*) AS c FROM persons WHERE gender="male" GROUP BY age HAVING c >1
+nums = func.count('*').label('c')
+results = sessin.query( Person.school, nums ).filter(Person.gender=='male').group_by(Person.age).having(nums > 10)
+```
 
 
 
