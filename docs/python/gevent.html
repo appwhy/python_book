@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>python · python_book</title>
+        <title>gevent · python_book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gevent.html" />
+    <link rel="next" href="python其他库.html" />
     
     
-    <link rel="prev" href="../nlp/NLP 相关算法.html" />
+    <link rel="prev" href="python.html" />
     
 
     </head>
@@ -194,7 +194,7 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="python.html">
+        <li class="chapter " data-level="3.1" data-path="python.html">
             
                 <a href="python.html">
             
@@ -208,7 +208,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1.1" data-path="gevent.html">
+        <li class="chapter active" data-level="3.1.1" data-path="gevent.html">
             
                 <a href="gevent.html">
             
@@ -464,7 +464,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >python</a>
+        <a href=".." >gevent</a>
     </h1>
 </div>
 
@@ -479,14 +479,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python"><b>1. </b>python</a></li></ul></div><a href="#python" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="python"><a name="python" class="anchor-navigation-ex-anchor" href="#python"><i class="fa fa-link" aria-hidden="true"></i></a>1. python</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#gevent"><b>1. </b>gevent</a></li></ul></div><a href="#gevent" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="gevent"><a name="gevent" class="anchor-navigation-ex-anchor" href="#gevent"><i class="fa fa-link" aria-hidden="true"></i></a>1. gevent</h1>
 <p>[TOC]</p>
 <!-- toc -->
 <!-- tocstop -->
 <hr>
-<p>&#x8BB0;&#x5F55;python&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x3002; </p>
+<p>gevent&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;libev&#x7684;&#x5E76;&#x53D1;&#x5E93;&#x3002;&#x5B83;&#x4E3A;&#x5404;&#x79CD;&#x5E76;&#x53D1;&#x548C;&#x7F51;&#x7EDC;&#x76F8;&#x5173;&#x7684;&#x4EFB;&#x52A1;&#x63D0;&#x4F9B;&#x4E86;&#x6574;&#x6D01;&#x7684;API&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">from</span> gevent <span class="token keyword">import</span> monkey
+monkey<span class="token punctuation">.</span>patch_all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> gevent
+
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+gevent<span class="token punctuation">.</span>spawn<span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+
+gevent<span class="token punctuation">.</span>joinall<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    gevent<span class="token punctuation">.</span>spawn<span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    gevent<span class="token punctuation">.</span>spawn<span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright @appwhy all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2020-06-17 09:37:25
+2020-10-25 17:23:27
 </span></footer>
                                 
                                 </section>
@@ -514,12 +528,12 @@
 
             
                 
-                <a href="../nlp/NLP 相关算法.html" class="navigation navigation-prev " aria-label="Previous page: NLP 相关算法">
+                <a href="python.html" class="navigation navigation-prev " aria-label="Previous page: python">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="gevent.html" class="navigation navigation-next " aria-label="Next page: gevent">
+                <a href="python其他库.html" class="navigation navigation-next " aria-label="Next page: python其他库">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -530,7 +544,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"python","level":"3.1","depth":1,"next":{"title":"gevent","level":"3.1.1","depth":2,"path":"python/gevent.md","ref":"python/gevent.md","articles":[]},"previous":{"title":"NLP 相关算法","level":"2.1.1","depth":2,"path":"nlp/NLP 相关算法.md","ref":"nlp/NLP 相关算法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-highlight","prism","prism-themes","code","github","mermaid-gb3","splitter","anchor-navigation-ex","3-ba","splitter","simple-page-toc","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @appwhy","modify_label":"文件更新于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"github":{"url":"https://github.com/appwhy"},"simple-page-toc":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"prism-themes":{},"3-ba":{"configuration":"auto","token":"20b05c51dc78c5786b84d16d003150ac"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"appwhy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_book","language":"zh-hans","links":{"sidebar":{"Home":"https://github.com/appwhy"}},"gitbook":"*","description":"记录python知识点"},"file":{"path":"python/python.md","mtime":"2020-06-17T01:37:25.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-25T09:30:14.043Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gevent","level":"3.1.1","depth":2,"next":{"title":"python其他库","level":"3.1.2","depth":2,"path":"python/python其他库.md","ref":"python/python其他库.md","articles":[]},"previous":{"title":"python","level":"3.1","depth":1,"path":"python/python.md","ref":"python/python.md","articles":[{"title":"gevent","level":"3.1.1","depth":2,"path":"python/gevent.md","ref":"python/gevent.md","articles":[]},{"title":"python其他库","level":"3.1.2","depth":2,"path":"python/python其他库.md","ref":"python/python其他库.md","articles":[]},{"title":"python常用库","level":"3.1.3","depth":2,"path":"python/python常用库.md","ref":"python/python常用库.md","articles":[]},{"title":"python环境","level":"3.1.4","depth":2,"path":"python/python环境.md","ref":"python/python环境.md","articles":[]},{"title":"基础知识","level":"3.1.5","depth":2,"path":"python/基础知识.md","ref":"python/基础知识.md","articles":[]},{"title":"小技巧","level":"3.1.6","depth":2,"path":"python/小技巧.md","ref":"python/小技巧.md","articles":[]},{"title":"常用知识点","level":"3.1.7","depth":2,"path":"python/常用知识点.md","ref":"python/常用知识点.md","articles":[]},{"title":"常见问题","level":"3.1.8","depth":2,"path":"python/常见问题.md","ref":"python/常见问题.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-highlight","prism","prism-themes","code","github","mermaid-gb3","splitter","anchor-navigation-ex","3-ba","splitter","simple-page-toc","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @appwhy","modify_label":"文件更新于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"github":{"url":"https://github.com/appwhy"},"simple-page-toc":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"prism-themes":{},"3-ba":{"configuration":"auto","token":"20b05c51dc78c5786b84d16d003150ac"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"appwhy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_book","language":"zh-hans","links":{"sidebar":{"Home":"https://github.com/appwhy"}},"gitbook":"*","description":"记录python知识点"},"file":{"path":"python/gevent.md","mtime":"2020-10-25T09:23:27.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-25T09:30:14.043Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

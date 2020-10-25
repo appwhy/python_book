@@ -8,6 +8,8 @@
 
 ## argparse
 
+链接：[link](https://docs.python.org/zh-cn/dev/library/argparse.html)
+
 ```python
 import argparse
 
@@ -37,6 +39,10 @@ nargs 字符串：
 * `'+'`：表示读取至少1个该位置参数。
 * `'?'`：表示该位置参数要么没有，要么就只要一个。
 
+
+
+参数被多次传递，可能会失真，尤其是带有单引号、双引号时。参考argparse模块。
+
 ## jinja2
 
 Jinja2是Python下一个被广泛应用的模版引擎，他的设计思想来源于Django的模板引擎，并扩展了其语法和一系列强大的功能。其中最显著的一个是增加了沙箱执行功能和可选的自动转义功能，这对大多应用的安全性来说是非常重要的。
@@ -63,6 +69,18 @@ li[0]
       {{ i }}
 {% endfor %}
 ```
+
+jinja2预定义的一些变量：
+
+|     变量      |              含义               |
+| :-----------: | :-----------------------------: |
+| `loop.index`  |    循环中的迭代计数，从1开始    |
+| `loop.index0` |    循环中的迭代计数，从0开始    |
+| `loop.first`  |     是否为循环的第一个元素      |
+|  `loop.last`  |    是否为循环的最后一个元素     |
+| `loop.length` |      循环序列中元素的个数       |
+| `loop.depth`  | 当前循环在递归中的层级，从1开始 |
+| `loop.depth0` | 当前循环在递归中的层级，从0开始 |
 
 
 
@@ -422,7 +440,7 @@ $regex：正则表达式
 
 
 
-## mysql
+## mysql/sqlalchemy
 
 ```bash
 pip install SQLAlchemy
@@ -491,6 +509,39 @@ session.execute(sql)
 
 session.close()
 ```
+
+### 通过反射获取对象
+
+反射可以得到2种对象，`class 'sqlalchemy.ext.declarative.api.DeclarativeMeta' (class 'sqlalchemy.ext.automap.data_sync')`， `class 'sqlalchemy.sql.schema.Table'`， Table一点都不好操作，推荐使用前一个。
+
+```python
+from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy.ext.automap import automap_base
+
+engine = create_engine('mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(user, pswd, ip, port, dbname),
+                        pool_size=30, pool_recycle=300, pool_pre_ping=True, echo=echo)
+
+# Base.prepare本质是调用Base.metadata的reflect方法
+def reflect_all_tables(engine):
+    Base = automap_base()
+    Base.prepare(engine, reflect=True)
+    table = Base.classes['data_sync']           # class 'sqlalchemy.ext.declarative.api.DeclarativeMeta'
+    table = Base.metadata.tables['data_sync']   # class 'sqlalchemy.sql.schema.Table'
+
+def reflect_single_table(engine, table_name):
+    metadata = MetaData(engine)
+    metadata.reflect(engine, only=[table_name])
+
+    Base = automap_base(metadata=metadata)
+    Base.prepare()
+
+    table = metadata.tables[table_name]
+    table = Base.classes[table_name]
+```
+
+
+
+### 反射没有主键的表
 
 
 
@@ -603,6 +654,43 @@ zk.get_acls('/')
 ```python
 zk.create('/test/hg_test/test2/test3/node',b'hello world')
 ```
+
+
+
+## retrying
+
+`pip install retrying`
+
+```python
+from retrying import retry
+
+# 一直重试，直到成功
+@retry
+def func():
+    pass
+
+
+# 最多重试5次， 每次重试间隔时间增加2秒
+@retry(stop_max_attempt_number=5, wait_incrementing_increment=2000)
+```
+
+
+
+## inspect
+
+inspect模块用于收集python对象的信息，可以获取类或函数的参数的信息，源码，解析堆栈，对对象进行类型检查等等。
+
+```python
+from inspect import Signature, signature
+
+# 获取函数参数及其默认值
+sig = signature(getattr(A_Class, func_name))
+for field, parameter in sig.parameters.items():  
+    if parameter.default is not Signature.empty: # 参数带有默认值 
+        print('参数名: {}, 默认值: {}'.format(field, parameter.default))
+```
+
+
 
 
 
