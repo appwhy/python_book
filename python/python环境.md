@@ -323,9 +323,96 @@ conda env list
 
 
 
+## pyenv
+
+github网址：https://github.com/pyenv/pyenv
+
+安装步骤：
+
+1. 克隆项目到家目录下：`git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
+
+2. 编辑.bashrc文件
+
+   ```bash
+   export PYENV_ROOT="$HOME/.pyenv"
+   export PATH="$PYENV_ROOT/bin:$PATH"
+   
+   if command -v pyenv 1>/dev/null 2>&1; then
+   	  eval "$(pyenv init -)"
+   fi
+   
+   ```
+
+3. 重启该shell窗口
+
+4. 安装插件：
+
+   ```bash
+   git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+   
+   echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+   ```
+
+   
+
+   
 
 
 
 
 
+常用命令：
+
+```bash
+# 查看当前版本
+pyenv version
+
+# 查看所有版本
+pyenv versions
+
+# 查看所有可安装的版本
+pyenv install --list
+
+# 安装指定版本
+pyenv install 3.6.5
+# 安装新版本后rehash一下
+pyenv rehash
+
+# 删除指定版本
+pyenv uninstall 3.5.2
+
+# 指定全局版本
+pyenv global 3.6.5
+
+# 指定多个全局版本, 3版本优先
+pyenv global 3.6.5 2.7.14
+```
+
+
+
+```bash
+# pyenv 工具下载
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+# 环境变量配置
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+# python源下载，国内镜像加速
+v=3.6.1;wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;pyenv install $v
+# 安装python 
+pyenv install 3.6.5
+
+# pyenv-virtualenv 工具下载
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+# 环境变量配置
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+# 环境变量在当前shell生效
+source ~/.bashrc
+
+# 创建python3生成环境(虚拟环境针对的是不同的python环境来说，主要是为了隔离python版本与相关的包)
+pyenv virtualenv 3.6.5 test3.6.5#test3.6.5可以换成你的虚拟环境名字
+#这样生成的环境就是python3.6.5版本的
+# 进入环境
+pyenv activate handle3.6.1(# 退出当前环境 source deactivate )
+```
 

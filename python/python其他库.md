@@ -541,6 +541,23 @@ def reflect_single_table(engine, table_name):
 
 
 
+
+
+打印mysql语句
+
+```python
+from sqlalchemy.dialects import mysql
+
+print(q.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
+
+# 这种方式可以打印包含参数的执行语句，但是参数只包括数字和字符串等基本类型。
+
+print(q.statement.compile().params)
+# {u'id_1': 1} 
+```
+
+
+
 ### 反射没有主键的表
 
 
