@@ -331,7 +331,7 @@ github网址：https://github.com/pyenv/pyenv
 
 1. 克隆项目到家目录下：`git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
 
-2. 编辑.bashrc文件
+2. 编辑.bashrc文件(已经过期了， 请看官网最新版本。。。)
 
    ```bash
    export PYENV_ROOT="$HOME/.pyenv"
